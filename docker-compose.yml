@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  remote-recruit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: remote-recruit
+    ports:
+      - "3000:80"
+    restart: unless-stopped

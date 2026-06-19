@@ -2,9 +2,9 @@
 
 ## Overview
 
-This project is a responsive React + Tailwind CSS implementation of the RemoteRecruit landing page based on the provided Figma design.
+This project is a responsive React + TypeScript implementation of the RemoteRecruit landing page based on the provided Figma design.
 
-The application follows a component-based architecture and includes responsive layouts, smooth animations, hover interactions, optimized assets, and accessibility improvements.
+The application follows a component-based architecture and includes responsive layouts, smooth animations, hover interactions, accessibility improvements, and performance optimizations.
 
 ---
 
@@ -13,7 +13,7 @@ The application follows a component-based architecture and includes responsive l
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
+- npm
 
 ### Installation
 
@@ -29,9 +29,9 @@ npm install
 npm run dev
 ```
 
-The application will be available at:
+Application URL:
 
-```bash
+```text
 http://localhost:5173
 ```
 
@@ -45,6 +45,34 @@ npm run build
 
 ```bash
 npm run preview
+```
+
+---
+
+## Docker Support
+
+Build Docker image:
+
+```bash
+docker build -t remote-recruit .
+```
+
+Run container:
+
+```bash
+docker run -p 3000:80 remote-recruit
+```
+
+Using Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+Application URL:
+
+```text
+http://localhost:3000
 ```
 
 ---
@@ -65,10 +93,11 @@ npm run preview
 
 - Framer Motion
 
-### Development Tools
+### Tooling
 
 - ESLint
-- TypeScript
+- Docker
+- Docker Compose
 
 ---
 
@@ -77,13 +106,12 @@ npm run preview
 - Fully responsive design (Desktop, Tablet, Mobile)
 - Component-based architecture
 - Smooth scroll reveal animations
-- Hover effects and interactive transitions
-- Scroll-to-top button
-- FAQ section with expandable items
+- Interactive hover effects and transitions
+- Scroll-to-top functionality
+- FAQ section with expandable content
 - Lazy-loaded images
-- Optimized image rendering with decoding hints
-- Accessibility improvements (alt text, semantic structure)
-- Performance optimizations targeting Lighthouse 90+
+- Accessibility-friendly alt text and semantic HTML
+- Performance optimizations targeting Lighthouse score ≥ 90
 
 ---
 
@@ -96,84 +124,22 @@ remote-recruit/
 │   ├── App.tsx
 │   ├── assets/
 │   ├── components/
-│   │   ├── Navbar/
-│   │   ├── Hero/
-│   │   ├── Features/
-│   │   ├── Footer/
-│   │   ├── ScrollTop/
-│   │   └── FAQ/
 │   ├── data/
 │   ├── pages/
 │   ├── index.css
 │   └── main.tsx
 ├── README.md
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
 ├── eslint.config.js
 ├── index.html
-├── package-lock.json
 ├── package.json
+├── package-lock.json
 ├── tsconfig.app.json
 ├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
-```
-
-## Frameworks & Libraries Used
-
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-
-## Setup Instructions
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run development server:
-
-```bash
-npm run dev
-```
-
-Build production version:
-
-```bash
-npm run build
-```
-
-Preview production build:
-
-```bash
-npm run preview
-```
-
-## Features
-
-- Fully responsive design (Desktop, Tablet, Mobile)
-- Component-based architecture
-- Tailwind CSS styling
-- Framer Motion animations
-- Smooth section reveal effects
-- Interactive hover states
-- Scroll-to-top functionality
-- FAQ section with expandable content
-- Optimized image loading using lazy loading
-- Accessibility-friendly alt text and semantic HTML
-
-## Known Issues / Limitations
-
-- FAQ content currently uses placeholder/mock data.
-- Social media icons are provided as a single image asset.
-- Decorative background elements are simplified on smaller devices for responsiveness.
-- No backend/API integration; all content is static.
-- Animations may vary slightly depending on device/browser performance.
-
-```
-
 ```
 
 ---
@@ -183,24 +149,23 @@ npm run preview
 - Lazy loading for non-critical images
 - Async image decoding
 - Responsive layouts using Tailwind breakpoints
-- Reduced unnecessary re-renders
 - Optimized Framer Motion animations
 - Semantic HTML structure for accessibility
+- Reduced layout shifts by specifying image dimensions
 
 ---
 
 ## Known Issues / Limitations
 
-- Social media icons are currently provided as a single image asset rather than individual SVG icons.
-- Some decorative background elements are hidden on smaller screens to improve responsiveness and performance.
-- Framer Motion animations may be slightly reduced on low-powered devices depending on browser performance.
-- FAQ content currently uses mock/static placeholder data.
-- No backend integration is included; all content is static.
+- FAQ content currently uses placeholder/mock data.
+- Social media icons are provided as a single image asset.
+- No backend/API integration is included; all content is static.
+- Some decorative elements are simplified on smaller screens to improve responsiveness and performance.
 
 ---
 
 ## Author
 
-Mohd Adam Si Thu Thet Naing
+**Adam Si Thu Thet Naing**
 
-Frontend implementation using React, TypeScript, Tailwind CSS, and Framer Motion.
+Frontend implementation using React, TypeScript, Tailwind CSS, Framer Motion, and Docker.
