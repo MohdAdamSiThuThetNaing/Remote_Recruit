@@ -2,6 +2,35 @@ import { motion, type Variants } from "framer-motion";
 import SectionThreeImg from "/src/assets/SectionThreeImg.png";
 import avator from "../../assets/avator.png";
 
+const SKILL_TAGS = [
+  "Python Dev",
+  "Javascript",
+  "Front End",
+  "Back End",
+  "iOS Development",
+  "+12",
+] as const;
+
+const VIEWPORT_CONFIG = {
+  once: true,
+  amount: 0.2,
+} as const;
+
+const HOVER_TRANSITION = {
+  duration: 0.3,
+} as const;
+
+const FLOATING_DOT_ANIMATION = {
+  y: [0, -10, 0],
+  scale: [1, 1.1, 1],
+};
+
+const FLOATING_DOT_TRANSITION = {
+  duration: 3,
+  repeat: Infinity,
+  ease: "easeInOut",
+} as const;
+
 const sectionVariants: Variants = {
   hidden: { opacity: 0, y: 36 },
   visible: { opacity: 1, y: 0 },
@@ -12,7 +41,11 @@ const floatingVariants: Variants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { delay: 0.2, duration: 0.5, ease: "easeOut" },
+    transition: {
+      delay: 0.2,
+      duration: 0.5,
+      ease: "easeOut",
+    },
   },
 };
 
@@ -23,14 +56,10 @@ const FeatureThree = () => {
         className={styles.layout}
         initial="hidden"
         whileInView="visible"
-        viewport={{
-          once: true,
-          amount: 0.2,
-        }}
+        viewport={VIEWPORT_CONFIG}
         variants={sectionVariants}
         transition={styles.sectionTransition}
       >
-        {/* LEFT COLUMN CONTENT */}
         <div className={styles.leftColumn}>
           <motion.span
             className={styles.badge}
@@ -38,7 +67,7 @@ const FeatureThree = () => {
               scale: 1.08,
               y: -3,
             }}
-            transition={{ duration: 0.3 }}
+            transition={HOVER_TRANSITION}
           >
             Custom Profile
           </motion.span>
@@ -49,7 +78,7 @@ const FeatureThree = () => {
               scale: 1.03,
               color: "#1681C4",
             }}
-            transition={{ duration: 0.3 }}
+            transition={HOVER_TRANSITION}
           >
             Showcase Your Talents
           </motion.h2>
@@ -60,7 +89,7 @@ const FeatureThree = () => {
               scale: 1.02,
               y: -2,
             }}
-            transition={{ duration: 0.3 }}
+            transition={HOVER_TRANSITION}
           >
             Personalize your profile with everything that makes you unique. Add
             an introductory video and other media for a personal touch that
@@ -68,19 +97,21 @@ const FeatureThree = () => {
           </motion.p>
         </div>
 
-        {/* RIGHT COLUMN GRAPHIC COMPOSITION */}
-        <div className={styles.rightColumn}>
+        <motion.div
+          className={styles.rightColumn}
+          whileHover={{
+            y: -8,
+            scale: 1.02,
+          }}
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+          }}
+        >
           <motion.div
             className={styles.topLeftDot}
-            animate={{
-              y: [0, -10, 0],
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            animate={FLOATING_DOT_ANIMATION}
+            transition={FLOATING_DOT_TRANSITION}
           />
 
           <div className={styles.graphicCanvas}>
@@ -97,7 +128,7 @@ const FeatureThree = () => {
             </div>
 
             <div className={styles.tagsContainer}>
-              {skillTags.map((tag) => (
+              {SKILL_TAGS.map((tag) => (
                 <span
                   key={tag}
                   className={tag === "+12" ? styles.tagMore : styles.tagStatic}
@@ -135,60 +166,51 @@ const FeatureThree = () => {
                   className={styles.avatarImage}
                 />
               </div>
+
               <div
                 className="
-    group
-    flex
-    flex-col
-    cursor-pointer
-    transition-all
-    duration-300
-    hover:translate-x-2
-  "
+                  group
+                  flex
+                  flex-col
+                  cursor-pointer
+                  transition-all
+                  duration-300
+                  hover:translate-x-2
+                "
               >
                 <span
                   className="
-      text-[#667085]
-      transition-all
-      duration-300
-      group-hover:text-[#52B4DA]
-    "
+                    text-[#667085]
+                    transition-all
+                    duration-300
+                    group-hover:text-[#52B4DA]
+                  "
                 >
                   Past Client Feedback
                 </span>
 
                 <span
                   className="
-      font-semibold
-      text-[#0E1630]
-      transition-all
-      duration-300
-      group-hover:text-[#1E3E85]
-      group-hover:tracking-wide
-    "
+                    font-semibold
+                    text-[#0E1630]
+                    transition-all
+                    duration-300
+                    group-hover:text-[#1E3E85]
+                    group-hover:tracking-wide
+                  "
                 >
                   Best Developer Ever!
                 </span>
               </div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
 };
 
 export default FeatureThree;
-
-// Skill Tag Data Set
-const skillTags = [
-  "Python Dev",
-  "Javascript",
-  "Front End",
-  "Back End",
-  "iOS Development",
-  "+12",
-] as const;
 
 const styles = {
   section:

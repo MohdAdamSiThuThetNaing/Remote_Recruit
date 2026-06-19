@@ -2,7 +2,47 @@ import React from "react";
 import { motion } from "framer-motion";
 import remoteRecruitUI from "../../assets/remote_recruit_ui.png";
 
-const SignUpAd: React.FC = () => {
+const yellowSphereAnimation = {
+  animate: {
+    y: [0, -20, 0],
+    x: [0, 8, 0, -8, 0],
+    scale: [1, 1.1, 1],
+    rotate: [0, 10, 0, -10, 0],
+  },
+  transition: {
+    duration: 6,
+    repeat: Infinity,
+    repeatType: "mirror" as const,
+    ease: "easeInOut" as const,
+  },
+};
+
+const mobileSphereAnimation = {
+  animate: {
+    y: [0, -15, 0],
+    scale: [1, 1.1, 1],
+  },
+  transition: {
+    duration: 5,
+    repeat: Infinity,
+    ease: "easeInOut" as const,
+  },
+};
+
+const blueSphereAnimation = {
+  animate: {
+    y: [0, -15, 0],
+    scale: [1, 1.15, 1],
+    rotate: [0, 8, 0, -8, 0],
+  },
+  transition: {
+    duration: 6,
+    repeat: Infinity,
+    ease: "easeInOut" as const,
+  },
+};
+
+export default function SignUpAd(): React.JSX.Element {
   return (
     <section className={styles.section} id="sign-up-ad">
       <div className={styles.circleTopRight} />
@@ -10,7 +50,6 @@ const SignUpAd: React.FC = () => {
       <div className={styles.circleLeft} />
       <div className={styles.greenSphere} />
 
-      {/* LEFT CANVAS */}
       <div className={styles.leftColumnViewport}>
         <div className={styles.imageWrapper}>
           <div className={styles.innerImageWrapper}>
@@ -26,22 +65,11 @@ const SignUpAd: React.FC = () => {
 
         <motion.div
           className={styles.yellowSphere}
-          animate={{
-            y: [0, -20, 0],
-            x: [0, 8, 0, -8, 0],
-            scale: [1, 1.1, 1],
-            rotate: [0, 10, 0, -10, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            repeatType: "mirror",
-            ease: "easeInOut",
-          }}
+          animate={yellowSphereAnimation.animate}
+          transition={yellowSphereAnimation.transition}
         />
       </div>
 
-      {/* Mobile & Tablet Image */}
       <div className="xl:hidden relative z-20 px-4 pt-10 flex justify-center">
         <img
           src={remoteRecruitUI}
@@ -49,37 +77,29 @@ const SignUpAd: React.FC = () => {
           loading="lazy"
           decoding="async"
           className="
-      w-full
-      max-w-[700px]
-      rounded-[24px]
-      shadow-[15px_44px_108px_rgba(49,89,211,0.12)]
-    "
+            w-full
+            max-w-[700px]
+            rounded-[24px]
+            shadow-[15px_44px_108px_rgba(49,89,211,0.12)]
+          "
         />
 
         <motion.div
           className="
-      absolute
-      right-[10%]
-      top-0
-      h-[40px]
-      w-[40px]
-      rounded-full
-      bg-[linear-gradient(132.56deg,#FFED43_5.63%,#F29939_106.18%)]
-      shadow-[0px_12px_28px_rgba(255,177,0,0.35)]
-    "
-          animate={{
-            y: [0, -15, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+            absolute
+            right-[10%]
+            top-0
+            h-[40px]
+            w-[40px]
+            rounded-full
+            bg-[linear-gradient(132.56deg,#FFED43_5.63%,#F29939_106.18%)]
+            shadow-[0px_12px_28px_rgba(255,177,0,0.35)]
+          "
+          animate={mobileSphereAnimation.animate}
+          transition={mobileSphereAnimation.transition}
         />
       </div>
 
-      {/* RIGHT CONTENT */}
       <div className={styles.container}>
         <div className={styles.rightColumn}>
           <p className={styles.preHeading}>Are you ready?</p>
@@ -126,22 +146,12 @@ const SignUpAd: React.FC = () => {
 
       <motion.div
         className={styles.blueSphere}
-        animate={{
-          y: [0, -15, 0],
-          scale: [1, 1.15, 1],
-          rotate: [0, 8, 0, -8, 0],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        animate={blueSphereAnimation.animate}
+        transition={blueSphereAnimation.transition}
       />
     </section>
   );
-};
-
-export default SignUpAd;
+}
 
 const styles = {
   section:

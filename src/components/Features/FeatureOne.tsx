@@ -3,20 +3,42 @@ import dashboard from "../../assets/work-dashboard-ui.png";
 import logo from "../../assets/remoterecruit-logo.png";
 import avator from "../../assets/avator.png";
 
-const FeatureOne = () => {
+const VIEWPORT_CONFIG = {
+  once: true,
+} as const;
+
+const FEATURE_REVEAL_TRANSITION = {
+  duration: 0.7,
+  ease: [0.22, 1, 0.36, 1],
+} as const;
+
+const PROFILES = [
+  {
+    title: "Python Developer",
+    subtitle: "7 years experience",
+    alt: "Python Developer profile",
+    cardStyle: "profileCardOne",
+    transitionStyle: "cardOneTransition",
+  },
+  {
+    title: "Front End Wizard",
+    subtitle: "React • TypeScript",
+    alt: "Frontend Developer profile",
+    cardStyle: "profileCardTwo",
+    transitionStyle: "cardTwoTransition",
+  },
+] as const;
+
+function FeatureOne(): React.JSX.Element {
   return (
     <div className={styles.wrapper}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{
-          duration: 0.7,
-          ease: [0.22, 1, 0.36, 1],
-        }}
+        viewport={{ ...VIEWPORT_CONFIG, amount: 0.2 }}
+        transition={FEATURE_REVEAL_TRANSITION}
       >
         <div className={styles.gridContainer}>
-          {/* LEFT CONTENT BLOCK */}
           <div className={styles.leftColumn}>
             <motion.span
               className={styles.badge}
@@ -60,12 +82,19 @@ const FeatureOne = () => {
             </motion.p>
           </div>
 
-          {/* RIGHT GRAPHIC BLOCK */}
-          <div className={styles.rightColumn}>
-            {/* Dashed Background Graphic */}
+          <motion.div
+            className={styles.rightColumn}
+            whileHover={{
+              y: -8,
+              scale: 1.02,
+            }}
+            transition={{
+              duration: 0.4,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
             <div className={styles.dashedBg} />
 
-            {/* Core Dashboard UI Asset */}
             <img
               src={dashboard}
               alt="RemoteRecruit dashboard preview"
@@ -88,75 +117,47 @@ const FeatureOne = () => {
               className={styles.floatingLogo}
             />
 
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={styles.cardOneTransition}
-              className={styles.profileCardOne}
-            >
-              <div className={styles.avatarContainer}>
-                <img
-                  src={avator}
-                  alt="Python Developer profile"
-                  loading="lazy"
-                  decoding="async"
-                  width={56}
-                  height={56}
-                  className={`
-  ${styles.avatarImg}
-  transition-all
-  duration-500
-  ease-out
-  hover:-translate-y-2
-  hover:scale-110
-  hover:shadow-[0_15px_30px_rgba(30,62,133,0.25)]
-`}
-                />
-              </div>
-              <div className={styles.cardTextContainer}>
-                <h4 className={styles.cardTitle}>Python Developer</h4>
-                <p className={styles.cardSubtitle}>7 years experience</p>
-              </div>
-            </motion.div>
+            {PROFILES.map((profile) => (
+              <motion.div
+                key={profile.title}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={VIEWPORT_CONFIG}
+                transition={styles[profile.transitionStyle]}
+                className={styles[profile.cardStyle]}
+              >
+                <div className={styles.avatarContainer}>
+                  <img
+                    src={avator}
+                    alt={profile.alt}
+                    loading="lazy"
+                    decoding="async"
+                    width={56}
+                    height={56}
+                    className={`
+                      ${styles.avatarImg}
+                      transition-all
+                      duration-500
+                      ease-out
+                      hover:-translate-y-2
+                      hover:scale-110
+                      hover:shadow-[0_15px_30px_rgba(30,62,133,0.25)]
+                    `}
+                  />
+                </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={styles.cardTwoTransition}
-              className={styles.profileCardTwo}
-            >
-              <div className={styles.avatarContainer}>
-                <img
-                  src={avator}
-                  alt="Frontend Developer profile"
-                  loading="lazy"
-                  decoding="async"
-                  width={56}
-                  height={56}
-                  className={`
-  ${styles.avatarImg}
-  transition-all
-  duration-500
-  ease-out
-  hover:-translate-y-2
-  hover:scale-110
-  hover:shadow-[0_15px_30px_rgba(30,62,133,0.25)]
-`}
-                />
-              </div>
-              <div className={styles.cardTextContainer}>
-                <h4 className={styles.cardTitle}>Front End Wizard</h4>
-                <p className={styles.cardSubtitle}>React • TypeScript</p>
-              </div>
-            </motion.div>
-          </div>
+                <div className={styles.cardTextContainer}>
+                  <h4 className={styles.cardTitle}>{profile.title}</h4>
+                  <p className={styles.cardSubtitle}>{profile.subtitle}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </motion.div>
     </div>
   );
-};
+}
 
 export default FeatureOne;
 
@@ -178,7 +179,6 @@ const styles = {
   description:
     "text-[15px] sm:text-[16px] lg:text-[18px] leading-[28px] sm:leading-[32px] lg:leading-[36px] text-[#61708E]",
 
-  /* Right side */
   rightColumn:
     "relative w-full max-w-[451px] h-[340px] sm:h-[420px] lg:h-[454px] mx-auto order-1 lg:order-2",
 

@@ -1,49 +1,155 @@
-import { motion, type Variants } from "framer-motion";
-import React from "react";
+import {
+  motion,
+  type Variants,
+  type TargetAndTransition,
+  type Transition,
+} from "framer-motion";
 
 import logo from "../../assets/remoterecruit-logo.png";
 import PaypalMark from "../../assets/paypal-mark.svg";
 
+const FEATURES = [
+  "Up to 25 active job posts",
+  "Premium Placement & Visibility",
+  "Messaging anyone, unlimited",
+  "Unlimited invites",
+  "View all applicants",
+  "Unlimited invites to jobseekers",
+] as const;
+
+const VIEWPORT_CONFIG = {
+  once: true,
+  amount: 0.2,
+} as const;
+
+const HOVER_TRANSITION: Transition = {
+  duration: 0.3,
+};
+
+const SECTION_TRANSITION: Transition = {
+  duration: 0.7,
+  ease: [0.22, 1, 0.36, 1],
+};
+
+const CARD_TRANSITION: Transition = {
+  duration: 0.75,
+  ease: [0.22, 1, 0.36, 1],
+};
+
+const PAYMENT_TRANSITION: Transition = {
+  delay: 0.18,
+  duration: 0.75,
+  ease: [0.22, 1, 0.36, 1],
+};
+
+const ACCENT_DOT_ANIMATION: TargetAndTransition = {
+  y: [0, -10, 0],
+  scale: [1, 1.15, 1],
+  rotate: [0, 10, 0, -10, 0],
+};
+
+const ACCENT_DOT_TRANSITION: Transition = {
+  duration: 4,
+  repeat: Infinity,
+  ease: "easeInOut",
+};
+
+const LOGO_FLOAT_ANIMATION: TargetAndTransition = {
+  y: [0, -15, 0],
+};
+
+const LOGO_FLOAT_TRANSITION: Transition = {
+  duration: 3,
+  repeat: Infinity,
+  repeatType: "loop",
+  ease: "easeInOut",
+};
+
+const BADGE_HOVER: TargetAndTransition = {
+  scale: 1.08,
+  y: -3,
+  boxShadow: "0 10px 25px rgba(82,180,218,0.25)",
+};
+
+const HEADING_HOVER: TargetAndTransition = {
+  scale: 1.03,
+  color: "#1681C4",
+  textShadow: "0 0 20px rgba(82,180,218,0.25)",
+};
+
+const DESCRIPTION_HOVER: TargetAndTransition = {
+  scale: 1.02,
+  y: -2,
+};
+
+const PAYMENT_HOVER: TargetAndTransition = {
+  y: -8,
+  scale: 1.03,
+  boxShadow: "0px 25px 60px rgba(49,89,211,0.20)",
+};
+
+const PAYMENT_TAP: TargetAndTransition = {
+  scale: 0.98,
+};
+
 const sectionVariants: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
 };
 
 const cardVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.96 },
-  visible: { opacity: 1, scale: 1 },
+  hidden: {
+    opacity: 0,
+    scale: 0.96,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+  },
 };
 
-const FeatureTwo = (): React.JSX.Element => {
+function FeatureTwo() {
   return (
     <section className={styles.section}>
       <motion.div
         className={styles.layout}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={VIEWPORT_CONFIG}
         variants={sectionVariants}
-        transition={styles.sectionTransition}
+        transition={SECTION_TRANSITION}
       >
-        <div className={styles.leftColumn}>
+        <motion.div
+          className={styles.leftColumn}
+          whileHover={{
+            rotateY: -4,
+            rotateX: 2,
+            scale: 1.015,
+          }}
+          transition={{
+            duration: 0.45,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          style={{
+            transformStyle: "preserve-3d",
+          }}
+        >
           <motion.div
             className={styles.accentDot}
-            animate={{
-              y: [0, -10, 0],
-              scale: [1, 1.15, 1],
-              rotate: [0, 10, 0, -10, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            animate={ACCENT_DOT_ANIMATION}
+            transition={ACCENT_DOT_TRANSITION}
           />
 
           <motion.article
             className={styles.card}
             variants={cardVariants}
-            transition={styles.cardTransition}
+            transition={CARD_TRANSITION}
           >
             <header className={styles.header}>
               <p className={styles.headerLabel}>Your Membership Tier</p>
@@ -54,11 +160,12 @@ const FeatureTwo = (): React.JSX.Element => {
               <p className={styles.featuresLabel}>FEATURES</p>
 
               <ul className={styles.featureList}>
-                {features.map((feature) => (
+                {FEATURES.map((feature) => (
                   <li key={feature} className={styles.featureItem}>
                     <span aria-hidden="true" className={styles.checkIcon}>
                       <CheckIcon />
                     </span>
+
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -74,28 +181,17 @@ const FeatureTwo = (): React.JSX.Element => {
               width={140}
               height={140}
               className={styles.floatingLogo}
-              animate={{
-                y: [0, -15, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "easeInOut",
-              }}
+              animate={LOGO_FLOAT_ANIMATION}
+              transition={LOGO_FLOAT_TRANSITION}
             />
           </motion.article>
 
           <motion.div
             className={styles.paymentBadge}
             variants={cardVariants}
-            transition={styles.paymentTransition}
-            whileHover={{
-              y: -8,
-              scale: 1.03,
-              boxShadow: "0px 25px 60px rgba(49,89,211,0.20)",
-            }}
-            whileTap={{ scale: 0.98 }}
+            transition={PAYMENT_TRANSITION}
+            whileHover={PAYMENT_HOVER}
+            whileTap={PAYMENT_TAP}
           >
             <div className={styles.paymentLogo}>
               <img
@@ -111,43 +207,33 @@ const FeatureTwo = (): React.JSX.Element => {
 
             <div>
               <p className={styles.paymentLabel}>Upcoming Payment In...</p>
+
               <p className={styles.paymentAmount}>14 Days - $79.99</p>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
 
         <div className={styles.rightColumn}>
           <motion.span
             className={styles.badge}
-            whileHover={{
-              scale: 1.08,
-              y: -3,
-              boxShadow: "0 10px 25px rgba(82,180,218,0.25)",
-            }}
-            transition={{ duration: 0.3 }}
+            whileHover={BADGE_HOVER}
+            transition={HOVER_TRANSITION}
           >
             Actually Fee Free
           </motion.span>
 
           <motion.h3
             className={styles.heading}
-            whileHover={{
-              scale: 1.03,
-              color: "#1681C4",
-              textShadow: "0 0 20px rgba(82,180,218,0.25)",
-            }}
-            transition={{ duration: 0.3 }}
+            whileHover={HEADING_HOVER}
+            transition={HOVER_TRANSITION}
           >
             Fee-Free Forever
           </motion.h3>
 
           <motion.p
             className={styles.description}
-            whileHover={{
-              scale: 1.02,
-              y: -2,
-            }}
-            transition={{ duration: 0.3 }}
+            whileHover={DESCRIPTION_HOVER}
+            transition={HOVER_TRANSITION}
           >
             We don&apos;t charge you fees and we don&apos;t put up paywalls.
             We&apos;re the bridge that connects job opportunities with the best
@@ -157,20 +243,11 @@ const FeatureTwo = (): React.JSX.Element => {
       </motion.div>
     </section>
   );
-};
+}
 
 export default FeatureTwo;
 
-const features = [
-  "Up to 25 active job posts",
-  "Premium Placement & Visibility",
-  "Messaging anyone, unlimited",
-  "Unlimited invites",
-  "View all applicants",
-  "Unlimited invites to jobseekers",
-] as const;
-
-function CheckIcon(): React.JSX.Element {
+function CheckIcon() {
   return (
     <svg
       aria-hidden="true"

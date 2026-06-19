@@ -1,9 +1,15 @@
-interface Props {
+export interface Props {
   title: string;
   description: string;
 }
 
-export default function FeatureCard({ title, description }: Props) {
+/**
+ * Reusable feature card component.
+ */
+export default function FeatureCard({
+  title,
+  description,
+}: Readonly<Props>): React.JSX.Element {
   return (
     <div
       className="

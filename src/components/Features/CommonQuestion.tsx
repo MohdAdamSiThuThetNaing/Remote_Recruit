@@ -1,29 +1,11 @@
-const CommonQuestions = () => {
-  return (
-    <section className={styles.section} id="faq">
-      <div className={styles.container}>
-        <h2 className={styles.title}>Common Questions</h2>
+import React from "react";
 
-        <div className={styles.faqList}>
-          {faqData.map((faq, index) => (
-            <div key={index} className={styles.faqItem}>
-              <h3 className={styles.question}>{faq.question}</h3>
-              <p className={styles.answer}>{faq.answer}</p>
-            </div>
-          ))}
-        </div>
-
-        <button type="button" className={styles.moreButton}>
-          More Questions
-        </button>
-      </div>
-    </section>
-  );
+type FAQItem = {
+  question: string;
+  answer: string;
 };
 
-export default CommonQuestions;
-
-const faqData = [
+const faqData: readonly FAQItem[] = [
   {
     question: "Do I have to sign a long-term contract?",
     answer:
@@ -40,6 +22,32 @@ const faqData = [
       "Actually beard single-origin coffee, twee 90's PBR Echo Park sartorial try-hard freegan Portland ennui. Selvage jean shorts 90's, Vice American Apparel try-hard food truck Shoreditch fap lomo Wes Anderson. Art party",
   },
 ] as const;
+
+const CommonQuestions: React.FC = () => {
+  return (
+    <section className={styles.section} id="faq">
+      <div className={styles.container}>
+        <h2 className={styles.title}>Common Questions</h2>
+
+        <div className={styles.faqList}>
+          {faqData.map((faq) => (
+            <article key={faq.question} className={styles.faqItem}>
+              <h3 className={styles.question}>{faq.question}</h3>
+
+              <p className={styles.answer}>{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+
+        <button type="button" className={styles.moreButton}>
+          More Questions
+        </button>
+      </div>
+    </section>
+  );
+};
+
+export default CommonQuestions;
 
 const styles = {
   section:
