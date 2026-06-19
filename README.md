@@ -90,17 +90,90 @@ npm run preview
 ## Project Structure
 
 ```text
-src/
-├── assets/
-├── components/
-│   ├── Navbar/
-│   ├── Hero/
-│   ├── Features/
-│   ├── Footer/
-│   ├── ScrollTop/
-│   └── FAQ/
-├── App.tsx
-└── main.tsx
+remote-recruit/
+├── public/
+├── src/
+│   ├── App.tsx
+│   ├── assets/
+│   ├── components/
+│   │   ├── Navbar/
+│   │   ├── Hero/
+│   │   ├── Features/
+│   │   ├── Footer/
+│   │   ├── ScrollTop/
+│   │   └── FAQ/
+│   ├── data/
+│   ├── pages/
+│   ├── index.css
+│   └── main.tsx
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```
+
+## Frameworks & Libraries Used
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+
+## Setup Instructions
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Build production version:
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+## Features
+
+- Fully responsive design (Desktop, Tablet, Mobile)
+- Component-based architecture
+- Tailwind CSS styling
+- Framer Motion animations
+- Smooth section reveal effects
+- Interactive hover states
+- Scroll-to-top functionality
+- FAQ section with expandable content
+- Optimized image loading using lazy loading
+- Accessibility-friendly alt text and semantic HTML
+
+## Known Issues / Limitations
+
+- FAQ content currently uses placeholder/mock data.
+- Social media icons are provided as a single image asset.
+- Decorative background elements are simplified on smaller devices for responsiveness.
+- No backend/API integration; all content is static.
+- Animations may vary slightly depending on device/browser performance.
+
+```
+
 ```
 
 ---
