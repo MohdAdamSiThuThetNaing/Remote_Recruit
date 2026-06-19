@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
 import FeatureOne from "../components/Features/FeatureOne";
 import FeatureTwo from "../components/Features/FeatureTwo";
-import FAQ from "../components/FAQ/FAQ";
 import SignupBanner from "../components/SignupBanner/SignupBanner";
 import SmartFeatures from "../components/SmartFeatures/SmartFeatures";
 import Footer from "../components/Footer/Footer";
@@ -38,8 +37,6 @@ export default function LandingPage() {
         <FeatureOne />
 
         <FeatureTwo />
-
-        <FAQ />
 
         <SignupBanner />
 
