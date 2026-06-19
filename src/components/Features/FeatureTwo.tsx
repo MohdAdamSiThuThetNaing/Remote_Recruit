@@ -14,11 +14,6 @@ const cardVariants: Variants = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const floatingLogoVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1 },
-};
-
 const FeatureTwo = (): React.JSX.Element => {
   return (
     <section className={styles.section}>
