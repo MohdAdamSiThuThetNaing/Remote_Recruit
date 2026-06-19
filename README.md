@@ -120,6 +120,7 @@ docker compose up --build
 
 ### Functionality
 
+- Assessment information modal displayed on initial page load
 - Scroll-to-top button
 - FAQ section with expandable/collapsible answers
 - Responsive navigation and layout behavior
@@ -146,25 +147,24 @@ docker compose up --build
 
 ---
 
-## Project Structure
-
-```text
 remote-recruit/
 ├── public/
 ├── src/
-│   ├── App.tsx
-│   ├── assets/
-│   ├── components/
-│   │   ├── Navbar/
-│   │   ├── Hero/
-│   │   ├── Features/
-│   │   ├── Footer/
-│   │   ├── ScrollTop/
-│   │   └── FAQ/
-│   ├── data/
-│   ├── pages/
-│   ├── index.css
-│   └── main.tsx
+│ ├── App.tsx
+│ ├── assets/
+│ ├── components/
+│ │ ├── AssessmentModal/
+│ │ │ └── AssessmentModal.tsx
+│ │ ├── Navbar/
+│ │ ├── Hero/
+│ │ ├── Features/
+│ │ ├── Footer/
+│ │ ├── ScrollTop/
+│ │ └── FAQ/
+│ ├── data/
+│ ├── pages/
+│ ├── index.css
+│ └── main.tsx
 ├── README.md
 ├── Dockerfile
 ├── docker-compose.yml
@@ -177,7 +177,6 @@ remote-recruit/
 ├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
-```
 
 ---
 
