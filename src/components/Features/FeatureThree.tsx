@@ -108,11 +108,38 @@ const FeatureThree = () => {
                   className={styles.avatarImage}
                 />
               </div>
-              <div className="flex flex-col">
-                <span className={styles.feedbackLabel}>
+              <div
+                className="
+    group
+    flex
+    flex-col
+    cursor-pointer
+    transition-all
+    duration-300
+    hover:translate-x-2
+  "
+              >
+                <span
+                  className="
+      text-[#667085]
+      transition-all
+      duration-300
+      group-hover:text-[#52B4DA]
+    "
+                >
                   Past Client Feedback
                 </span>
-                <span className={styles.feedbackText}>
+
+                <span
+                  className="
+      font-semibold
+      text-[#0E1630]
+      transition-all
+      duration-300
+      group-hover:text-[#1E3E85]
+      group-hover:tracking-wide
+    "
+                >
                   Best Developer Ever!
                 </span>
               </div>
@@ -170,15 +197,16 @@ const styles = {
     "absolute left-[8px] top-[-12px] z-30 h-[18px] w-[18px] sm:h-[22px] sm:w-[22px] rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] shadow-[0_8px_20px_rgba(30,62,133,0.25)]",
 
   rightFloatingAvatar:
-    "absolute right-[-10px] sm:right-[-24px] top-[135px] sm:top-[152px] z-30 flex h-[70px] w-[70px] sm:h-[92px] sm:w-[92px] items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] p-[5px] sm:p-[6px] shadow-xl",
+    "absolute right-[-10px] sm:right-[-24px] top-[135px] sm:top-[152px] z-30 flex h-[70px] w-[70px] sm:h-[92px] sm:w-[92px] items-center justify-center rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] p-[5px] sm:p-[6px] shadow-xl duration-500 hover:-translate-y-2 hover:scale-105",
 
-  avatarImage: "h-full w-full rounded-full object-cover",
+  avatarImage:
+    "h-full w-full rounded-full object-cover duration-500 hover:brightness-110",
 
   feedbackBanner:
     "absolute left-[-10px] sm:left-[-95px] top-[220px] sm:top-[232px] z-40 flex h-[65px] sm:h-[73px] w-[260px] sm:w-[352px] items-center gap-3 sm:gap-4 rounded-full bg-white px-[12px] sm:px-[16px] shadow-[14px_13px_20px_rgba(135,129,245,0.11)]",
 
   feedbackAvatarCircle:
-    "flex h-[48px] w-[48px] sm:h-[56px] sm:w-[56px] flex-shrink-0 items-center justify-center overflow-hidden rounded-full border-[4px] border-[#FFD84D] bg-white shadow-[0_8px_20px_rgba(255,216,77,0.25)]",
+    "flex h-[48px] w-[48px] sm:h-[56px] sm:w-[56px] flex-shrink-0 items-center justify-center overflow-hidden rounded-full border-[4px] border-[#FFD84D] bg-white shadow-[0_8px_20px_rgba(255,216,77,0.25)] hover:scale-110 hover:shadow-[0_0_30px_rgba(82,180,218,0.35)]",
 
   feedbackLabel:
     "text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.08em] text-[#243B8F]",

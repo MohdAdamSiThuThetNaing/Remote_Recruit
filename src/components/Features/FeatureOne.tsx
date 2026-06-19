@@ -79,7 +79,15 @@ const FeatureOne = () => {
                   decoding="async"
                   width={56}
                   height={56}
-                  className={styles.avatarImg}
+                  className={`
+  ${styles.avatarImg}
+  transition-all
+  duration-500
+  ease-out
+  hover:-translate-y-2
+  hover:scale-110
+  hover:shadow-[0_15px_30px_rgba(30,62,133,0.25)]
+`}
                 />
               </div>
               <div className={styles.cardTextContainer}>
@@ -103,7 +111,15 @@ const FeatureOne = () => {
                   decoding="async"
                   width={56}
                   height={56}
-                  className={styles.avatarImg}
+                  className={`
+  ${styles.avatarImg}
+  transition-all
+  duration-500
+  ease-out
+  hover:-translate-y-2
+  hover:scale-110
+  hover:shadow-[0_15px_30px_rgba(30,62,133,0.25)]
+`}
                 />
               </div>
               <div className={styles.cardTextContainer}>
@@ -162,11 +178,14 @@ const styles = {
 
   avatarImg: "w-full h-full object-cover",
 
-  cardTextContainer: "flex flex-col justify-center min-w-0",
+  cardTextContainer:
+    "flex flex-col justify-center min-w-0 cursor-pointer transition-all duration-300 ease-out hover:translate-x-2 hover:scale-[1.02]",
 
-  cardTitle: "text-[13px] sm:text-[15px] font-semibold text-[#0E1630] truncate",
+  cardTitle:
+    "text-[13px] sm:text-[15px] font-semibold text-[#0E1630] truncate transition-all duration-300 hover:text-[#1E3E85]",
 
-  cardSubtitle: "text-[11px] sm:text-[13px] text-[#667085] truncate",
+  cardSubtitle:
+    "text-[11px] sm:text-[13px] text-[#667085] truncate transition-all duration-300 hover:text-[#52B4DA]",
 
   viewTransition: { duration: 0.6 } as const,
 

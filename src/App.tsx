@@ -20,7 +20,7 @@ function App() {
           w-full
           min-h-[560px]
           sm:min-h-[620px]
-          lg:min-h-[704px]
+          lg:min-h-[1000px]
           overflow-hidden
         "
       >
