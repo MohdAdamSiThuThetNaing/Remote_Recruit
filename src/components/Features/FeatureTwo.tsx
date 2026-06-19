@@ -117,15 +117,42 @@ const FeatureTwo = (): React.JSX.Element => {
         </div>
 
         <div className={styles.rightColumn}>
-          <span className={styles.badge}>Actually Fee Free</span>
+          <motion.span
+            className={styles.badge}
+            whileHover={{
+              scale: 1.08,
+              y: -3,
+              boxShadow: "0 10px 25px rgba(82,180,218,0.25)",
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            Actually Fee Free
+          </motion.span>
 
-          <h3 className={styles.heading}>Fee-Free Forever</h3>
+          <motion.h3
+            className={styles.heading}
+            whileHover={{
+              scale: 1.03,
+              color: "#1681C4",
+              textShadow: "0 0 20px rgba(82,180,218,0.25)",
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            Fee-Free Forever
+          </motion.h3>
 
-          <p className={styles.description}>
+          <motion.p
+            className={styles.description}
+            whileHover={{
+              scale: 1.02,
+              y: -2,
+            }}
+            transition={{ duration: 0.3 }}
+          >
             We don&apos;t charge you fees and we don&apos;t put up paywalls.
             We&apos;re the bridge that connects job opportunities with the best
             candidates, with no middleman involved.
-          </p>
+          </motion.p>
         </div>
       </motion.div>
     </section>

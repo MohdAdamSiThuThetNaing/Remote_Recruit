@@ -18,22 +18,46 @@ const FeatureOne = () => {
         <div className={styles.gridContainer}>
           {/* LEFT CONTENT BLOCK */}
           <div className={styles.leftColumn}>
-            <span className={styles.badge}>Global Reach</span>
+            <motion.span
+              className={styles.badge}
+              whileHover={{
+                scale: 1.08,
+                y: -3,
+              }}
+              transition={{ duration: 0.3 }}
+            >
+              Global Reach
+            </motion.span>
 
-            <h2 className={styles.heading}>
+            <motion.h2
+              className={styles.heading}
+              whileHover={{
+                scale: 1.03,
+                color: "#1681C4",
+                textShadow: "0px 0px 15px rgba(82,180,218,0.25)",
+              }}
+              transition={{ duration: 0.3 }}
+            >
               The First Fully Global
               <br />
               Job Board, Anywhere,
               <br />
               Ever
-            </h2>
+            </motion.h2>
 
-            <p className={styles.description}>
+            <motion.p
+              className={styles.description}
+              whileHover={{
+                scale: 1.02,
+                y: -2,
+              }}
+              transition={{ duration: 0.3 }}
+            >
               RemoteRecruit connects candidates with opportunities around the
               world. With today's remote-first workforce, you need to be able to
               find the best jobs and the best people for them, wherever they may
               be.
-            </p>
+            </motion.p>
           </div>
 
           {/* RIGHT GRAPHIC BLOCK */}

@@ -147,7 +147,7 @@ export default function AssessmentModal() {
           </p>
 
           <p>
-            <strong>Role:</strong> Frontend Developer
+            <strong>Role:</strong> Full-Stack Developer
           </p>
 
           <p>

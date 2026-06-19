@@ -1,7 +1,15 @@
 import React from "react";
 import footerLogo from "../../assets/RR_Icon_Logo.png";
 import footerMark from "../../assets/logo.png";
-import socialIconsImg from "../../assets/social_896.png";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaSnapchatGhost,
+  FaTwitter,
+} from "react-icons/fa";
+
+import { RiTwitterXFill } from "react-icons/ri";
 import activeIcon from "../../assets/Active Icon.svg";
 import inActiveIcon from "../../assets/InActive Icon.svg";
 import Diamond from "../../assets/diamond.png";
@@ -141,16 +149,29 @@ const Footer: React.FC = () => {
           />
 
           <div className={styles.socialsRow}>
-            <img
-              src={socialIconsImg}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              width={242}
-              height={32}
-              className="h-[32px] w-[242px] object-contain"
-            />
+            <a href="#" className={styles.socialIcon}>
+              <FaFacebookF size={14} />
+            </a>
+
+            <a href="#" className={styles.socialIcon}>
+              <FaInstagram size={16} />
+            </a>
+
+            <a href="#" className={styles.socialIcon}>
+              <RiTwitterXFill size={14} />
+            </a>
+
+            <a href="#" className={styles.socialIcon}>
+              <FaTwitter size={14} />
+            </a>
+
+            <a href="#" className={styles.socialIcon}>
+              <FaLinkedinIn size={14} />
+            </a>
+
+            <a href="#" className={styles.socialIcon}>
+              <FaSnapchatGhost size={16} />
+            </a>
           </div>
 
           <div className={styles.bottomCenterAccent}>
@@ -228,6 +249,9 @@ const styles = {
 
   planTitle: "text-[22px] md:text-[26px] font-bold text-[#1681C4]",
 
+  socialIcon:
+    "flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[linear-gradient(135deg,rgba(235,237,255,0.15)_0%,rgba(173,184,255,0.15)_100%)] text-[#DFE1F2] backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-[linear-gradient(135deg,rgba(235,237,255,0.25)_0%,rgba(173,184,255,0.25)_100%)] hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]",
+
   diamondWrapper:
     "w-[36px] h-[36px] rounded-full bg-white flex items-center justify-center shrink-0",
 
@@ -238,7 +262,7 @@ const styles = {
     "text-[14px] md:text-[16px] font-semibold leading-[15px] tracking-[0.4px] text-[#11142D] flex items-center",
 
   planTag:
-    "absolute top-[-20px] left-1/2 -translate-x-1/2 md:left-[7px] md:translate-x-0 w-[146px] h-[44px] rounded-[22px] bg-[#DDF8FA] flex items-center justify-center gap-[8px]",
+    "absolute top-[-20px] left-1/2 -translate-x-1/2 md:left-[7px] md:translate-x-0 w-[146px] h-[44px] rounded-[22px] bg-[#DDF8FA] flex items-center justify-center gap-[8px] transition-all duration-500 cursor-pointer hover:scale-110 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(82,180,218,0.35)] animate-bounce",
 
   planPrice:
     "flex items-center justify-center text-[24px] md:text-[32px] font-semibold leading-[45px] bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.16%)] bg-clip-text text-transparent",
@@ -321,7 +345,7 @@ const styles = {
     "absolute left-1/2 -translate-x-1/2 top-[280px] md:top-[300px] lg:left-[200px] lg:translate-x-0 lg:top-[350px] h-[60px] md:h-[74px] w-auto object-contain z-20",
 
   socialsRow:
-    "absolute left-1/2 -translate-x-1/2 top-[400px] md:top-[430px] lg:left-auto lg:right-[220px] lg:translate-x-0 lg:top-[315px] z-20",
+    "absolute left-1/2 -translate-x-1/2 top-[400px] md:top-[430px] lg:left-auto lg:right-[220px] lg:translate-x-0 lg:top-[340px] xl:top-[350px] flex items-center gap-[10px] z-20",
 
   gradientBorder:
     "relative mt-[40px] xl:absolute xl:left-[32px] xl:bottom-[32px] w-full xl:w-[436px] h-[72px] rounded-[24px] bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] p-[2px]",

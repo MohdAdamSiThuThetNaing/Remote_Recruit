@@ -32,13 +32,40 @@ const FeatureThree = () => {
       >
         {/* LEFT COLUMN CONTENT */}
         <div className={styles.leftColumn}>
-          <span className={styles.badge}>Custom Profile</span>
-          <h2 className={styles.heading}>Showcase Your Talents</h2>
-          <p className={styles.description}>
+          <motion.span
+            className={styles.badge}
+            whileHover={{
+              scale: 1.08,
+              y: -3,
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            Custom Profile
+          </motion.span>
+
+          <motion.h2
+            className={styles.heading}
+            whileHover={{
+              scale: 1.03,
+              color: "#1681C4",
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            Showcase Your Talents
+          </motion.h2>
+
+          <motion.p
+            className={styles.description}
+            whileHover={{
+              scale: 1.02,
+              y: -2,
+            }}
+            transition={{ duration: 0.3 }}
+          >
             Personalize your profile with everything that makes you unique. Add
             an introductory video and other media for a personal touch that
             stands out to employers and candidates.
-          </p>
+          </motion.p>
         </div>
 
         {/* RIGHT COLUMN GRAPHIC COMPOSITION */}
