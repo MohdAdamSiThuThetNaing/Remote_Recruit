@@ -209,12 +209,12 @@ const styles = {
     "inline-block text-[28px] md:text-[34px] font-bold tracking-[-0.02em] text-[#0E1630]",
 
   cardsGrid:
-    "relative z-[20] mx-auto mt-[40px] md:mt-[60px] mb-[-80px] md:mb-[-180px] flex max-w-[1040px] flex-col justify-center gap-[20px] md:gap-[28px] px-4 md:px-6 md:flex-row",
+    "relative z-[20] mx-auto mt-[40px] md:mt-[60px] mb-[-80px] md:mb-[-180px] flex max-w-[1040px] flex-col justify-center gap-[20px] md:gap-[28px] px-4 md:px-6 xl:flex-row",
 
-  card: "relative h-auto md:h-[343px] w-full md:w-[500px] rounded-[28px] bg-white p-[20px] md:p-[32px] shadow-[-15px_50px_150px_rgba(49,89,211,0.12)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[-15px_70px_180px_rgba(49,89,211,0.22)] hover:scale-[1.02]",
+  card: "relative h-auto xl:h-[343px] w-full xl:w-[500px] rounded-[28px] bg-white p-[20px] md:p-[32px] shadow-[-15px_50px_150px_rgba(49,89,211,0.12)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[-15px_70px_180px_rgba(49,89,211,0.22)] hover:scale-[1.02]",
 
   cardEmphasis:
-    "relative h-auto md:h-[343px] w-full md:w-[500px] rounded-[28px] bg-white p-[20px] md:p-[32px] shadow-[-15px_50px_150px_rgba(49,89,211,0.12)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[-15px_70px_180px_rgba(49,89,211,0.22)] hover:scale-[1.02]",
+    "relative h-auto xl:h-[343px] w-full xl:w-[500px] rounded-[28px] bg-white p-[20px] md:p-[32px] shadow-[-15px_50px_150px_rgba(49,89,211,0.12)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[-15px_70px_180px_rgba(49,89,211,0.22)] hover:scale-[1.02]",
 
   cardTop:
     "flex flex-col sm:flex-row w-full items-center sm:items-start gap-[24px]",
@@ -267,7 +267,7 @@ const styles = {
     "hidden lg:block absolute left-[-120px] bottom-[-260px] h-[524px] w-[524px] rounded-full bg-white opacity-[0.02]",
 
   primaryButtonWrapper:
-    "relative md:absolute left-0 md:left-[32px] bottom-0 md:bottom-[32px] mt-[24px] md:mt-0 w-full md:w-[436px] h-[72px] rounded-[24px] bg-[linear-gradient(129.98deg,#52B4DA_-106.35%,#1E3E85_95.25%)] shadow-[10px_0px_50px_0px_rgba(49,89,211,0.28)]",
+    "relative mt-[40px] xl:absolute xl:left-[32px] xl:bottom-[32px] w-full xl:w-[436px] h-[72px] rounded-[24px] bg-[linear-gradient(129.98deg,#52B4DA_-106.35%,#1E3E85_95.25%)] shadow-[10px_0px_50px_0px_rgba(49,89,211,0.28)]",
 
   socialCircleLink:
     "flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[linear-gradient(135deg,rgba(235,237,255,0.15)_0%,rgba(173,184,255,0.15)_100%)] text-[#DFE1F2]",
@@ -325,5 +325,5 @@ const styles = {
     "absolute left-1/2 -translate-x-1/2 top-[400px] md:top-[430px] lg:left-auto lg:right-[220px] lg:translate-x-0 lg:top-[315px] z-20",
 
   gradientBorder:
-    "relative md:absolute left-0 md:left-[32px] bottom-0 md:bottom-[32px] mt-[24px] md:mt-0 w-full md:w-[436px] h-[72px] rounded-[24px] bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] p-[2px]",
+    "relative mt-[40px] xl:absolute xl:left-[32px] xl:bottom-[32px] w-full xl:w-[436px] h-[72px] rounded-[24px] bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] p-[2px]",
 } as const;

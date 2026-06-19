@@ -41,6 +41,44 @@ const SignUpAd: React.FC = () => {
         />
       </div>
 
+      {/* Mobile & Tablet Image */}
+      <div className="xl:hidden relative z-20 px-4 pt-10 flex justify-center">
+        <img
+          src={remoteRecruitUI}
+          alt="RemoteRecruit Dashboard Mockup"
+          loading="lazy"
+          decoding="async"
+          className="
+      w-full
+      max-w-[700px]
+      rounded-[24px]
+      shadow-[15px_44px_108px_rgba(49,89,211,0.12)]
+    "
+        />
+
+        <motion.div
+          className="
+      absolute
+      right-[10%]
+      top-0
+      h-[40px]
+      w-[40px]
+      rounded-full
+      bg-[linear-gradient(132.56deg,#FFED43_5.63%,#F29939_106.18%)]
+      shadow-[0px_12px_28px_rgba(255,177,0,0.35)]
+    "
+          animate={{
+            y: [0, -15, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </div>
+
       {/* RIGHT CONTENT */}
       <div className={styles.container}>
         <div className={styles.rightColumn}>
