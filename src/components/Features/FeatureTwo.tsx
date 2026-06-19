@@ -90,6 +90,12 @@ const FeatureTwo = (): React.JSX.Element => {
             className={styles.paymentBadge}
             variants={cardVariants}
             transition={styles.paymentTransition}
+            whileHover={{
+              y: -8,
+              scale: 1.03,
+              boxShadow: "0px 25px 60px rgba(49,89,211,0.20)",
+            }}
+            whileTap={{ scale: 0.98 }}
           >
             <div className={styles.paymentLogo}>
               <img
