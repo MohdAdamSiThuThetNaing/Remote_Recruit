@@ -1,4 +1,3 @@
-import React from "react";
 import { motion, type Variants } from "framer-motion";
 import SectionThreeImg from "/src/assets/SectionThreeImg.png";
 import avator from "../../assets/avator.png";

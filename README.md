@@ -4,7 +4,7 @@
 
 This project is a responsive React + TypeScript implementation of the RemoteRecruit landing page based on the provided Figma design.
 
-The application follows a component-based architecture and includes responsive layouts, smooth animations, hover interactions, accessibility improvements, and performance optimizations.
+The application follows a component-based architecture and recreates the design with responsive layouts, smooth animations, interactive hover effects, accessibility improvements, and performance optimizations.
 
 ---
 
@@ -51,28 +51,28 @@ npm run preview
 
 ## Docker Support
 
-Build Docker image:
+### Build Docker Image
 
 ```bash
 docker build -t remote-recruit .
 ```
 
-Run container:
+### Run Docker Container
 
 ```bash
-docker run -p 3000:80 remote-recruit
-```
-
-Using Docker Compose:
-
-```bash
-docker compose up --build
+docker run -p 8004:80 remote-recruit
 ```
 
 Application URL:
 
 ```text
-http://localhost:3000
+http://localhost:8004
+```
+
+### Using Docker Compose
+
+```bash
+docker compose up --build
 ```
 
 ---
@@ -103,15 +103,46 @@ http://localhost:3000
 
 ## Features Implemented
 
-- Fully responsive design (Desktop, Tablet, Mobile)
-- Component-based architecture
-- Smooth scroll reveal animations
-- Interactive hover effects and transitions
-- Scroll-to-top functionality
-- FAQ section with expandable content
-- Lazy-loaded images
-- Accessibility-friendly alt text and semantic HTML
-- Performance optimizations targeting Lighthouse score ≥ 90
+### Design & UI
+
+- Pixel-accurate implementation based on the provided Figma design
+- Fully responsive layout for Desktop, Tablet, and Mobile devices
+- Component-based architecture for maintainability and reusability
+- Interactive hover states and smooth transitions
+- Consistent spacing, typography, gradients, and color system
+
+### Animations
+
+- Framer Motion powered section reveal animations
+- Fade-in and slide-up effects on scroll
+- Floating decorative element animations
+- Interactive button and card hover animations
+
+### Functionality
+
+- Scroll-to-top button
+- FAQ section with expandable/collapsible answers
+- Responsive navigation and layout behavior
+- Mock data implementation for FAQ and informational sections
+
+### Accessibility
+
+- Semantic HTML structure
+- Meaningful image alt attributes
+- Keyboard-accessible interactive elements
+- Improved screen reader compatibility
+
+---
+
+## Performance Optimizations
+
+- Lazy loading for non-critical images
+- Async image decoding
+- Optimized asset imports for production builds
+- Responsive layouts using Tailwind breakpoints
+- Reduced layout shifts with explicit image dimensions
+- Optimized Framer Motion animations
+- Lighthouse-friendly implementation (Performance, Accessibility, Best Practices)
 
 ---
 
@@ -124,6 +155,12 @@ remote-recruit/
 │   ├── App.tsx
 │   ├── assets/
 │   ├── components/
+│   │   ├── Navbar/
+│   │   ├── Hero/
+│   │   ├── Features/
+│   │   ├── Footer/
+│   │   ├── ScrollTop/
+│   │   └── FAQ/
 │   ├── data/
 │   ├── pages/
 │   ├── index.css
@@ -144,23 +181,13 @@ remote-recruit/
 
 ---
 
-## Performance Optimizations
-
-- Lazy loading for non-critical images
-- Async image decoding
-- Responsive layouts using Tailwind breakpoints
-- Optimized Framer Motion animations
-- Semantic HTML structure for accessibility
-- Reduced layout shifts by specifying image dimensions
-
----
-
 ## Known Issues / Limitations
 
-- FAQ content currently uses placeholder/mock data.
+- FAQ content uses placeholder/mock data.
 - Social media icons are provided as a single image asset.
-- No backend/API integration is included; all content is static.
-- Some decorative elements are simplified on smaller screens to improve responsiveness and performance.
+- No backend/API integration is included.
+- Some decorative background elements are simplified on smaller screens to improve responsiveness and performance.
+- Docker production build requires importing assets through Vite imports rather than using `/src/assets/...` paths.
 
 ---
 

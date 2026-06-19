@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import remoteRecruitUI from "../../assets/remote_recruit_ui.png";
 
 const SignUpAd: React.FC = () => {
   return (
@@ -14,10 +15,11 @@ const SignUpAd: React.FC = () => {
         <div className={styles.imageWrapper}>
           <div className={styles.innerImageWrapper}>
             <img
-              src="/src/assets/remote_recruit_ui.png"
+              src={remoteRecruitUI}
               alt="RemoteRecruit Dashboard Mockup"
               className={styles.mockupImage}
               loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

@@ -1,5 +1,3 @@
-import React from "react";
-
 const CommonQuestions = () => {
   return (
     <section className={styles.section} id="faq">

@@ -8,8 +8,19 @@ const Hero = (): React.JSX.Element => {
         <motion.h1
           className={styles.heading}
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={styles.headingTransition}
+          animate={{
+            opacity: [0.9, 1, 0.9],
+            y: [0, -10, 0],
+          }}
+          whileHover={{
+            scale: 1.03,
+            textShadow: "0px 0px 20px rgba(255,255,255,0.5)",
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         >
           RemoteRecruit&apos;s Difference
         </motion.h1>
@@ -17,8 +28,19 @@ const Hero = (): React.JSX.Element => {
         <motion.p
           className={styles.description}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={styles.descriptionTransition}
+          animate={{
+            opacity: [0.75, 1, 0.75],
+          }}
+          whileHover={{
+            scale: 1.02,
+            color: "#FFFFFF",
+            textShadow: "0px 0px 12px rgba(255,255,255,0.3)",
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         >
           RemoteRecruit is connecting the world with an easy-to-use platform
           that lets full-time, part-time, and freelance workers showcase their
