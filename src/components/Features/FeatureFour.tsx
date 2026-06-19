@@ -180,13 +180,13 @@ const styles = {
   rightColumn: "relative w-full max-w-[520px] text-center lg:text-left",
 
   preHeading:
-    "mb-[12px] lg:mb-[14px] text-[14px] md:text-[15px] lg:text-[16px] font-bold uppercase tracking-wide text-[#1F4FA3]",
+    "mb-[12px] lg:mb-[14px] text-[14px] md:text-[15px] lg:text-[16px] font-bold uppercase tracking-wide text-[#1F4FA3] transition-all duration-300 ease-out cursor-pointer hover:text-[#52B4DA] hover:tracking-[0.12em] hover:drop-shadow-[0_0_12px_rgba(82,180,218,0.4)]",
 
   heading:
     "mb-[18px] lg:mb-[22px] text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[42px] md:leading-[50px] lg:leading-[58px] text-[#0E1630]",
 
   subHeading:
-    "mb-[28px] lg:mb-[34px] max-w-[440px] mx-auto lg:mx-0 text-[15px] lg:text-[16px] leading-[28px] lg:leading-[30px] text-[#7A889B]",
+    "mb-[28px] lg:mb-[34px] max-w-[440px] mx-auto lg:mx-0 text-[15px] lg:text-[16px] leading-[28px] lg:leading-[30px] text-[#7A889B] transition-all duration-300 ease-out cursor-pointer hover:text-[#1E3E85] hover:scale-[1.02] hover:drop-shadow-[0_0_15px_rgba(30,62,133,0.15)]",
 
   ctaButton:
     "mx-auto lg:mx-0 flex h-[54px] w-[188px] items-center gap-[14px] rounded-[30px] bg-[#CBE4FF] p-[6px] shadow-[0_6px_22px_rgba(37,87,180,0.14)] transition-all duration-200 hover:bg-[#B3D6FF]",

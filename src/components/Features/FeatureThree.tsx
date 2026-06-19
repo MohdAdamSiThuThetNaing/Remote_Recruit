@@ -174,7 +174,7 @@ const styles = {
     "w-full flex flex-col justify-center text-center lg:text-left order-2 lg:order-1",
 
   badge:
-    "inline-flex self-center lg:self-start items-center rounded-full bg-[#DFF1FF] px-4 py-2 text-xs sm:text-sm font-semibold text-[#1681C4] mb-5 lg:mb-6",
+    "inline-flex self-center lg:self-start items-center rounded-full bg-[#DFF1FF] px-4 py-2 text-xs sm:text-sm font-semibold text-[#1681C4] mb-5 lg:mb-6 transition-all duration-300 ease-out cursor-pointer hover:scale-110 hover:-translate-y-1 hover:text-[#0E1630] hover:shadow-[0_12px_30px_rgba(22,129,196,0.3)]",
 
   heading:
     "text-[30px] sm:text-[36px] lg:text-[40px] font-medium leading-[38px] sm:leading-[46px] lg:leading-[52px] text-[#0E1630] mb-5 lg:mb-8",

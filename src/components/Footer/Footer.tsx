@@ -116,7 +116,6 @@ const Footer: React.FC = () => {
       </div>
 
       <div className={styles.footerBackground}>
-        <div className={styles.lightBlueBackground} />
         <div className={styles.darkBlueBackground} />
 
         <div

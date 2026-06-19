@@ -256,7 +256,7 @@ const styles = {
   rightColumn: "w-full max-w-[448px] text-center lg:text-left mx-auto lg:mx-0",
 
   badge:
-    "inline-flex items-center rounded-full bg-[#BFEAFB] px-4 py-2 text-[12px] sm:text-[13px] font-semibold text-[#223B5B]",
+    "inline-flex items-center rounded-full bg-[#BFEAFB] px-4 py-2 text-[12px] sm:text-[13px] font-semibold text-[#223B5B] transition-all duration-300 ease-out cursor-pointer hover:scale-105 hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(82,180,218,0.25)]",
 
   heading:
     "mt-6 lg:mt-[34px] text-[30px] sm:text-[36px] lg:text-[42px] font-bold leading-[38px] sm:leading-[44px] lg:leading-[50px] text-[#121635]",
