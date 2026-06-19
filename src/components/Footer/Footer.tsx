@@ -166,7 +166,17 @@ const Footer: React.FC = () => {
             />
           </div>
         </div>
-        <div className="absolute top-[550px] left-0 h-px w-full bg-[#8BA3CC] opacity-50" />
+        <div
+          className="
+    absolute
+    bottom-[70px]
+    left-0
+    h-px
+    w-full
+    bg-[#8BA3CC]
+    opacity-50
+  "
+        />
       </div>
     </footer>
   );
@@ -269,7 +279,7 @@ const styles = {
     "absolute bottom-[76px] left-0 h-px w-full bg-[#8BA3CC] opacity-50 z-20",
 
   bottomCenterAccent:
-    "absolute left-1/2 -translate-x-1/2 md:left-[700px] md:translate-x-0 bottom-[20px] md:bottom-[24px] z-20",
+    "absolute left-1/2 -translate-x-1/2 bottom-[24px] md:bottom-[32px] lg:bottom-[12px] z-20",
 
   bottomLogo: "h-[28px] md:h-[32px] w-auto object-contain",
 
@@ -309,10 +319,10 @@ const styles = {
     "relative z-10 mx-auto h-full w-full max-w-[1440px] px-4 md:px-0",
 
   footerLogo:
-    "absolute left-1/2 -translate-x-1/2 md:left-[200px] md:translate-x-0 top-[280px] md:top-[350px] h-[60px] md:h-[74px] w-auto object-contain z-20",
+    "absolute left-1/2 -translate-x-1/2 top-[280px] md:top-[300px] lg:left-[200px] lg:translate-x-0 lg:top-[350px] h-[60px] md:h-[74px] w-auto object-contain z-20",
 
   socialsRow:
-    "absolute left-1/2 -translate-x-1/2 md:left-auto md:right-[220px] md:translate-x-0 top-[380px] md:top-[350px] z-20",
+    "absolute left-1/2 -translate-x-1/2 top-[400px] md:top-[430px] lg:left-auto lg:right-[220px] lg:translate-x-0 lg:top-[315px] z-20",
 
   gradientBorder:
     "relative md:absolute left-0 md:left-[32px] bottom-0 md:bottom-[32px] mt-[24px] md:mt-0 w-full md:w-[436px] h-[72px] rounded-[24px] bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] p-[2px]",
