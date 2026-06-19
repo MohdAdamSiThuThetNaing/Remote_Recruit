@@ -57,14 +57,14 @@ const styles = {
     "w-full flex flex-col gap-[24px] md:gap-[32px] lg:gap-[40px] mb-[32px] md:mb-[40px] lg:mb-[44px]",
 
   faqItem:
-    "w-full flex flex-col gap-[10px] md:gap-[12px] lg:gap-[14px] max-w-full lg:max-w-[940px]",
+    "w-full flex flex-col gap-[10px] md:gap-[12px] lg:gap-[14px] max-w-full lg:max-w-[940px] transition-all  duration-300 ease-out cursor-pointer hover:-translate-y-1 hover:border-[#52B4DA] hover:bg-[linear-gradient(132.56deg,rgba(82,180,218,0.03)_5.63%,rgba(30,62,133,0.03)_106.18%)] hover:shadow-[0px_15px_40px_rgba(49,89,211,0.12)]",
 
   question:
-    "text-[15px] sm:text-[16px] lg:text-[18px] font-bold text-[#0E1630] tracking-[0.01em] leading-normal",
+    "text-[15px] sm:text-[16px] lg:text-[18px] font-bold text-[#0E1630] tracking-[0.01em] leading-normal transition-colors duration-300 group-hover:text-[#1681C4]",
 
   answer:
     "text-[14px] sm:text-[15px] md:text-[16px] font-normal text-[#61708E] leading-[24px] md:leading-[26px]",
 
   moreButton:
-    "mx-auto lg:mx-0 h-[44px] md:h-[46px] px-[20px] md:px-[24px] rounded-[12px] border-[1.5px] border-[#1681C4] bg-white text-[#1681C4] text-[13px] md:text-[14px] font-bold tracking-wide transition-all hover:bg-sky-50 active:scale-[0.98] cursor-pointer outline-none",
+    "mx-auto lg:mx-0 h-[44px] md:h-[46px] px-[20px] md:px-[24px] rounded-[12px] border-[1.5px] border-[#1681C4] bg-white text-[#1681C4] text-[13px] md:text-[14px] font-bold tracking-wide  hover:bg-sky-50 active:scale-[0.98] cursor-pointer outline-none tracking-wide transition-all duration-300 hover:-translate-y-1 hover:bg-[#1681C4]  hover:shadow-[0px_12px_30px_rgba(22,129,196,0.25)] active:scale-[0.98] cursor-pointer",
 } as const;

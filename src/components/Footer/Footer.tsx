@@ -201,10 +201,10 @@ const styles = {
   cardsGrid:
     "relative z-[20] mx-auto mt-[40px] md:mt-[60px] mb-[-80px] md:mb-[-180px] flex max-w-[1040px] flex-col justify-center gap-[20px] md:gap-[28px] px-4 md:px-6 md:flex-row",
 
-  card: "relative h-auto md:h-[343px] w-full md:w-[500px] rounded-[28px] bg-white p-[20px] md:p-[32px] shadow-[-15px_50px_150px_rgba(49,89,211,0.12)]",
+  card: "relative h-auto md:h-[343px] w-full md:w-[500px] rounded-[28px] bg-white p-[20px] md:p-[32px] shadow-[-15px_50px_150px_rgba(49,89,211,0.12)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[-15px_70px_180px_rgba(49,89,211,0.22)] hover:scale-[1.02]",
 
   cardEmphasis:
-    "relative h-auto md:h-[343px] w-full md:w-[500px] rounded-[28px] bg-white p-[20px] md:p-[32px] shadow-[-15px_50px_150px_rgba(49,89,211,0.12)]",
+    "relative h-auto md:h-[343px] w-full md:w-[500px] rounded-[28px] bg-white p-[20px] md:p-[32px] shadow-[-15px_50px_150px_rgba(49,89,211,0.12)] transition-all duration-500 ease-out hover:-translate-y-3 hover:shadow-[-15px_70px_180px_rgba(49,89,211,0.22)] hover:scale-[1.02]",
 
   cardTop:
     "flex flex-col sm:flex-row w-full items-center sm:items-start gap-[24px]",
@@ -244,8 +244,11 @@ const styles = {
   checkIcon:
     "inline-flex h-[16px] w-[16px] items-center justify-center rounded-full bg-[#E3F2FD] text-[10px] font-bold text-[#1681C4]",
 
+  outlineButton:
+    "w-full h-full rounded-[22px] bg-white text-[#1E3E85] text-[18px] md:text-[20px] font-semibold leading-[26px] flex items-center justify-center transition-all duration-300 hover:bg-[#F4F8FF] hover:scale-[1.02]",
+
   primaryButton:
-    "w-full h-full rounded-[24px] flex items-center justify-center text-white text-[18px] md:text-[20px] font-semibold leading-[26px]",
+    "w-full h-full rounded-[24px] flex items-center justify-center text-white text-[18px] md:text-[20px] font-semibold leading-[26px] transition-all duration-300 hover:scale-[1.03]",
 
   topRightCircle:
     "hidden lg:block absolute right-[-120px] top-[-150px] h-[524px] w-[524px] rounded-full bg-white opacity-[0.05]",
@@ -313,7 +316,4 @@ const styles = {
 
   gradientBorder:
     "relative md:absolute left-0 md:left-[32px] bottom-0 md:bottom-[32px] mt-[24px] md:mt-0 w-full md:w-[436px] h-[72px] rounded-[24px] bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)] p-[2px]",
-
-  outlineButton:
-    "w-full h-full rounded-[22px] bg-white text-[#1E3E85] text-[18px] md:text-[20px] font-semibold leading-[26px] tracking-[0px] flex items-center justify-center",
 } as const;
