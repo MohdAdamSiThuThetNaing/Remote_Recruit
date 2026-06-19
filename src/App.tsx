@@ -8,13 +8,14 @@ import CommonQuestions from "./components/Features/CommonQuestion";
 import Footer from "./components/Footer/Footer";
 import ScrollTop from "./components/ScrollTop/ScrollTop";
 import AssessmentModal from "./components/AssessmentModal/AssessmentModal.tsx";
-
+import RainBackground from "./components/RainBackground/RainBackground.tsx";
 import backgroundSvg from "./assets/Background.svg";
 
 function App() {
   return (
     <>
       <AssessmentModal />
+      <RainBackground />
 
       <div className="w-full overflow-x-hidden">
         {/* Hero Section */}

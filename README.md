@@ -118,13 +118,17 @@ docker compose up --build
 - Floating decorative element animations
 - Interactive button and card hover animations
 
-### Functionality
+## Functionality
 
 - Assessment information modal displayed on initial page load
+- Animated rain background effect across the landing page
 - Scroll-to-top button
 - FAQ section with expandable/collapsible answers
 - Responsive navigation and layout behavior
+- Interactive Framer Motion animations throughout the landing page
+- Floating UI elements and hover effects for feature sections
 - Mock data implementation for FAQ and informational sections
+- Responsive design optimized for desktop, tablet, and mobile devices
 
 ### Accessibility
 
@@ -147,24 +151,30 @@ docker compose up --build
 
 ---
 
+## Project Structure
+
+```text
+
 remote-recruit/
 ├── public/
 ├── src/
-│ ├── App.tsx
-│ ├── assets/
-│ ├── components/
-│ │ ├── AssessmentModal/
-│ │ │ └── AssessmentModal.tsx
-│ │ ├── Navbar/
-│ │ ├── Hero/
-│ │ ├── Features/
-│ │ ├── Footer/
-│ │ ├── ScrollTop/
-│ │ └── FAQ/
-│ ├── data/
-│ ├── pages/
-│ ├── index.css
-│ └── main.tsx
+│   ├── App.tsx
+│   ├── assets/
+│   ├── components/
+│   │   ├── AssessmentModal/
+│   │   │   └── AssessmentModal.tsx
+│   │   ├── Navbar/
+│   │   ├── Hero/
+│   │   ├── Features/
+│   │   ├── Footer/
+│   │   ├── ScrollTop/
+│   │   ├── FAQ/
+│   │   └── RainBackground/
+│   │       └── RainBackground.tsx
+│   ├── data/
+│   ├── pages/
+│   ├── index.css
+│   └── main.tsx
 ├── README.md
 ├── Dockerfile
 ├── docker-compose.yml
@@ -177,6 +187,7 @@ remote-recruit/
 ├── tsconfig.json
 ├── tsconfig.node.json
 └── vite.config.ts
+```
 
 ---
 
