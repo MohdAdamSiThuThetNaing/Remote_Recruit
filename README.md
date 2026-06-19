@@ -8,6 +8,18 @@ The application follows a component-based architecture and recreates the design 
 
 ---
 
+```bash
+80% browser zoom
+```
+
+## Special Notes
+
+- For the best visual experience, please view the application at **80% browser zoom level** on desktop devices.
+- The landing page was designed and optimized primarily for standard desktop resolutions and modern browsers.
+- All sections are fully responsive and adapt to tablet and mobile screen sizes.
+- Animations are powered by Framer Motion and may appear smoother on hardware-accelerated browsers such as Chrome, Edge, and Safari.
+- The animated rain background effect is intentionally subtle to preserve readability and overall user experience.
+
 ## Project Setup
 
 ### Prerequisites
