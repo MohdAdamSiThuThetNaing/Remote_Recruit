@@ -26,14 +26,18 @@ export default function Navbar() {
         {/* Logo */}
         <img
           src={logo}
-          alt="Remote Recruit"
+          alt="RemoteRecruit logo"
+          loading="eager"
+          decoding="async"
+          width={123}
+          height={50}
           className="
-            w-[100px]
-            sm:w-[110px]
-            md:w-[123px]
-            h-auto
-            object-contain
-          "
+    w-[100px]
+    sm:w-[110px]
+    md:w-[123px]
+    h-auto
+    object-contain
+  "
         />
 
         {/* Navigation */}

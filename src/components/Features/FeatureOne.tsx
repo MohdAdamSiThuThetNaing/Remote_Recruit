@@ -7,10 +7,13 @@ const FeatureOne = () => {
   return (
     <div className={styles.wrapper}>
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={styles.viewTransition}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{
+          duration: 0.7,
+          ease: [0.22, 1, 0.36, 1],
+        }}
       >
         <div className={styles.gridContainer}>
           {/* LEFT CONTENT BLOCK */}
@@ -41,15 +44,21 @@ const FeatureOne = () => {
             {/* Core Dashboard UI Asset */}
             <img
               src={dashboard}
-              alt="Dashboard Preview"
+              alt="RemoteRecruit dashboard preview"
               loading="lazy"
+              decoding="async"
+              width={315}
+              height={176}
               className={styles.dashboardImg}
             />
 
             <motion.img
               src={logo}
-              alt="RemoteRecruit Floating Icon"
+              alt="RemoteRecruit floating logo"
               loading="lazy"
+              decoding="async"
+              width={91}
+              height={91}
               animate={{ y: [0, -8, 0] }}
               transition={styles.floatingTransition}
               className={styles.floatingLogo}
@@ -65,7 +74,11 @@ const FeatureOne = () => {
               <div className={styles.avatarContainer}>
                 <img
                   src={avator}
-                  alt="Python Developer"
+                  alt="Python Developer profile"
+                  loading="lazy"
+                  decoding="async"
+                  width={56}
+                  height={56}
                   className={styles.avatarImg}
                 />
               </div>
@@ -85,7 +98,11 @@ const FeatureOne = () => {
               <div className={styles.avatarContainer}>
                 <img
                   src={avator}
-                  alt="Frontend Developer"
+                  alt="Frontend Developer profile"
+                  loading="lazy"
+                  decoding="async"
+                  width={56}
+                  height={56}
                   className={styles.avatarImg}
                 />
               </div>

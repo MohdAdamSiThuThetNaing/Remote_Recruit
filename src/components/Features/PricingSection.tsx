@@ -23,7 +23,12 @@ const PricingSection = () => {
               <div className={styles.featureItem}>
                 <img
                   src={activeIcon}
-                  alt="Active"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  width={20}
+                  height={20}
                   className={styles.activeIcon}
                 />
                 <span className={styles.featureText}>1 Active Job</span>
@@ -31,7 +36,12 @@ const PricingSection = () => {
               <div className={styles.featureItem}>
                 <img
                   src={activeIcon}
-                  alt="Active"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  width={20}
+                  height={20}
                   className={styles.activeIcon}
                 />
                 <span className={styles.featureText}>Basic List Placement</span>
@@ -39,7 +49,12 @@ const PricingSection = () => {
               <div className={styles.featureItem}>
                 <img
                   src={inActiveIcon}
-                  alt="inActive"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  width={20}
+                  height={20}
                   className={styles.inActiveIcon}
                 />
                 <span className={styles.featureTextDisabled}>
@@ -49,7 +64,12 @@ const PricingSection = () => {
               <div className={styles.featureItem}>
                 <img
                   src={inActiveIcon}
-                  alt="inActive"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  width={20}
+                  height={20}
                   className={styles.inActiveIcon}
                 />
                 <span className={styles.featureTextDisabled}>

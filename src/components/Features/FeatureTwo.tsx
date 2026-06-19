@@ -26,7 +26,7 @@ const FeatureTwo = (): React.JSX.Element => {
         className={styles.layout}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
         transition={styles.sectionTransition}
       >
@@ -72,12 +72,22 @@ const FeatureTwo = (): React.JSX.Element => {
 
             <motion.img
               src={logo}
-              alt="RemoteRecruit logo"
+              alt=""
+              aria-hidden="true"
               loading="lazy"
               decoding="async"
+              width={140}
+              height={140}
               className={styles.floatingLogo}
-              variants={floatingLogoVariants}
-              transition={styles.logoTransition}
+              animate={{
+                y: [0, -15, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
             />
           </motion.article>
 
@@ -89,7 +99,11 @@ const FeatureTwo = (): React.JSX.Element => {
             <div className={styles.paymentLogo}>
               <img
                 src={PaypalMark}
-                alt="PayPal"
+                alt="PayPal payment method"
+                loading="lazy"
+                decoding="async"
+                width={36}
+                height={36}
                 className="h-[36px] w-[36px] object-contain"
               />
             </div>

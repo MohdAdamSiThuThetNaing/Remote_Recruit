@@ -25,13 +25,15 @@ const SignUpAd: React.FC = () => {
         <motion.div
           className={styles.yellowSphere}
           animate={{
-            y: [0, -15, 0],
-            scale: [1, 1.08, 1],
-            rotate: [0, 6, 0, -6, 0],
+            y: [0, -20, 0],
+            x: [0, 8, 0, -8, 0],
+            scale: [1, 1.1, 1],
+            rotate: [0, 10, 0, -10, 0],
           }}
           transition={{
-            duration: 5,
+            duration: 6,
             repeat: Infinity,
+            repeatType: "mirror",
             ease: "easeInOut",
           }}
         />
@@ -103,57 +105,59 @@ export default SignUpAd;
 
 const styles = {
   section:
-    "relative min-h-[650px] lg:h-[610px] w-full overflow-hidden bg-[linear-gradient(132.56deg,rgba(87,153,235,0.10)_5.63%,rgba(159,116,251,0.10)_106.18%)]",
+    "relative min-h-[600px] md:min-h-[650px] lg:h-[610px] w-full overflow-hidden bg-[linear-gradient(132.56deg,rgba(87,153,235,0.10)_5.63%,rgba(159,116,251,0.10)_106.18%)]",
 
   circleTopRight:
-    "absolute right-[-120px] top-[-120px] h-[220px] w-[220px] md:h-[300px] md:w-[300px] lg:h-[380px] lg:w-[380px] rounded-full bg-white opacity-30",
+    "absolute right-[-100px] md:right-[-120px] lg:left-[1168px] top-[-100px] md:top-[-138px] h-[220px] w-[220px] md:h-[300px] md:w-[300px] lg:h-[380px] lg:w-[380px] rounded-full bg-white opacity-30",
 
   circleCenter:
-    "absolute left-1/2 bottom-[-180px] -translate-x-1/2 h-[280px] w-[280px] md:h-[380px] md:w-[380px] lg:h-[493px] lg:w-[493px] rounded-full bg-white opacity-30",
+    "absolute left-1/2 -translate-x-1/2 lg:translate-x-0 lg:left-[497px] bottom-[-180px] lg:top-[299px] h-[280px] w-[280px] md:h-[380px] md:w-[380px] lg:h-[493px] lg:w-[493px] rounded-full bg-white opacity-30",
 
   circleLeft:
-    "absolute left-[-100px] top-[-80px] h-[180px] w-[180px] md:h-[250px] md:w-[250px] lg:h-[321px] lg:w-[321px] rounded-full bg-white opacity-30",
+    "absolute left-[-80px] top-[-80px] lg:left-[-85px] lg:top-[-92px] h-[180px] w-[180px] md:h-[250px] md:w-[250px] lg:h-[321px] lg:w-[321px] rounded-full bg-white opacity-30",
 
   greenSphere:
-    "absolute left-[30px] bottom-[30px] md:left-[80px] lg:left-[163px] h-[50px] w-[50px] md:h-[70px] md:w-[70px] lg:h-[87px] lg:w-[87px] rounded-full bg-[#19CDB8]",
+    "absolute left-[30px] bottom-[20px] md:left-[80px] md:bottom-[-20px] lg:left-[163px] lg:bottom-[-43px] h-[50px] w-[50px] md:h-[70px] md:w-[70px] lg:h-[87px] lg:w-[87px] rounded-full bg-[#19CDB8]",
+
+  imageWrapper:
+    "relative h-[420px] w-[650px] xl:h-[520px] xl:w-[800px] 2xl:h-[589px] 2xl:w-[917px] rounded-[40.11px] bg-white shadow-[15.18px_44.45px_108.41px_rgba(49,89,211,0.12)]",
+
+  innerImageWrapper:
+    "absolute inset-[12px] xl:left-[18px] xl:top-[13px] xl:h-[560px] xl:w-[886px] overflow-hidden rounded-[30.35px]",
+
+  leftColumnViewport:
+    "absolute left-[-38px] top-[101px] z-20 hidden lg:flex h-[589px] w-[917px] items-end",
+
+  mockupImage:
+    "h-full w-full rounded-[40px] shadow-[15px_44px_108px_rgba(49,89,211,0.12)] object-cover xl:translate-x-[-20px]",
+
+  yellowSphere:
+    "absolute left-[55%] top-[-40px] xl:left-[491px] xl:top-[-70px] z-30 h-[53px] w-[53px] rounded-full bg-[linear-gradient(132.56deg,#FFED43_5.63%,#F29939_106.18%)] shadow-[0px_12px_28px_rgba(255,177,0,0.35)]",
 
   container:
-    "relative z-30 mx-auto flex h-full max-w-[1440px] items-center justify-center lg:justify-end px-6 md:px-10 lg:px-[100px] py-16 lg:py-0",
+    "relative z-30 mx-auto flex h-full w-full max-w-[1440px] items-center justify-center lg:justify-end px-6 md:px-10 lg:px-[100px]",
 
   rightColumn: "relative w-full max-w-[520px] text-center lg:text-left",
 
   preHeading:
-    "mb-3 text-[14px] md:text-[16px] font-bold uppercase tracking-wide text-[#1F4FA3]",
+    "mb-[12px] lg:mb-[14px] text-[14px] md:text-[15px] lg:text-[16px] font-bold uppercase tracking-wide text-[#1F4FA3]",
 
   heading:
-    "mb-5 text-[32px] sm:text-[40px] lg:text-[48px] font-bold leading-tight lg:leading-[58px] text-[#0E1630]",
+    "mb-[18px] lg:mb-[22px] text-[32px] md:text-[40px] lg:text-[48px] font-bold leading-[42px] md:leading-[50px] lg:leading-[58px] text-[#0E1630]",
 
   subHeading:
-    "mb-8 text-[15px] md:text-[16px] leading-[28px] md:leading-[30px] text-[#7A889B] max-w-[440px] mx-auto lg:mx-0",
+    "mb-[28px] lg:mb-[34px] max-w-[440px] mx-auto lg:mx-0 text-[15px] lg:text-[16px] leading-[28px] lg:leading-[30px] text-[#7A889B]",
 
   ctaButton:
-    "mx-auto lg:mx-0 flex h-[54px] w-[188px] items-center gap-[14px] rounded-[30px] bg-[#CBE4FF] p-[6px] shadow-[0_6px_22px_rgba(37,87,180,0.14)]",
+    "mx-auto lg:mx-0 flex h-[54px] w-[188px] items-center gap-[14px] rounded-[30px] bg-[#CBE4FF] p-[6px] shadow-[0_6px_22px_rgba(37,87,180,0.14)] transition-all duration-200 hover:bg-[#B3D6FF]",
 
   iconCircle:
-    "ml-[3px] flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#52B4DA] text-white",
+    "ml-[3px] flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#52B4DA] text-white shadow-[0_4px_12px_rgba(22,129,196,0.25)]",
 
   arrowIcon: "translate-x-[0.5px]",
 
   buttonText: "text-[15px] font-bold text-[#1E3E85] tracking-tight",
 
-  leftColumnViewport:
-    "absolute left-[-60px] bottom-0 z-20 hidden lg:flex w-[700px] xl:w-[850px] 2xl:w-[917px] items-end",
-
-  imageWrapper:
-    "relative w-full rounded-[40px] bg-white shadow-[15px_44px_108px_rgba(49,89,211,0.12)]",
-
-  innerImageWrapper: "overflow-hidden rounded-[30px]",
-
-  mockupImage: "w-full h-auto object-cover",
-
-  yellowSphere:
-    "absolute left-[55%] top-[-40px] z-30 h-[53px] w-[53px] rounded-full bg-[linear-gradient(132.56deg,#FFED43_5.63%,#F29939_106.18%)] shadow-[0px_12px_28px_rgba(255,177,0,0.35)]",
-
   blueSphere:
-    "absolute right-[420px] bottom-[40px] h-[29px] w-[29px] rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]",
+    "hidden lg:block absolute left-[1370px] top-[532px] h-[29px] w-[29px] rounded-full bg-[linear-gradient(132.56deg,#52B4DA_5.63%,#1E3E85_106.18%)]",
 } as const;

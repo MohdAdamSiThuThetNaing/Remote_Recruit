@@ -29,6 +29,11 @@ const Footer: React.FC = () => {
                   <img
                     src={feature.active ? activeIcon : inActiveIcon}
                     alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    width={20}
+                    height={20}
                     className={
                       feature.active ? styles.activeIcon : styles.inactiveIcon
                     }
@@ -62,7 +67,12 @@ const Footer: React.FC = () => {
                 <div className={styles.diamondWrapper}>
                   <img
                     src={Diamond}
-                    alt="Premium"
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    width={20}
+                    height={20}
                     className={styles.diamondImg}
                   />
                 </div>
@@ -80,7 +90,16 @@ const Footer: React.FC = () => {
             <ul className={styles.featuresList}>
               {premiumFeatures.map((feature) => (
                 <li key={feature.text} className={styles.featureItem}>
-                  <img src={activeIcon} alt="" className={styles.activeIcon} />
+                  <img
+                    src={activeIcon}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    width={20}
+                    height={20}
+                    className={styles.activeIcon}
+                  />
 
                   <span className={styles.featureText}>{feature.text}</span>
                 </li>
@@ -114,20 +133,37 @@ const Footer: React.FC = () => {
         <div className={styles.footerInnerLayout}>
           <img
             src={footerMark}
-            alt="RemoteRecruit"
+            alt="RemoteRecruit logo"
+            loading="lazy"
+            decoding="async"
+            width={184}
+            height={74}
             className={styles.footerLogo}
           />
 
           <div className={styles.socialsRow}>
             <img
               src={socialIconsImg}
-              alt="Social Media"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              width={242}
+              height={32}
               className="h-[32px] w-[242px] object-contain"
             />
           </div>
 
           <div className={styles.bottomCenterAccent}>
-            <img src={footerLogo} alt="RR" className={styles.bottomLogo} />
+            <img
+              src={footerLogo}
+              alt="RemoteRecruit icon"
+              loading="lazy"
+              decoding="async"
+              width={40}
+              height={32}
+              className={styles.bottomLogo}
+            />
           </div>
         </div>
         <div className="absolute top-[493px] left-0 h-px w-full bg-[#8BA3CC] opacity-50" />

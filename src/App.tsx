@@ -27,13 +27,16 @@ function App() {
         <img
           src={backgroundSvg}
           alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
           className="
-            absolute
-            inset-0
-            w-full
-            h-full
-            object-cover
-          "
+    absolute
+    inset-0
+    w-full
+    h-full
+    object-cover
+  "
         />
 
         <div className="relative z-10">

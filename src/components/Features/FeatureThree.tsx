@@ -24,7 +24,10 @@ const FeatureThree = () => {
         className={styles.layout}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
         variants={sectionVariants}
         transition={styles.sectionTransition}
       >
@@ -58,9 +61,12 @@ const FeatureThree = () => {
             <div className={styles.imageWrapper}>
               <img
                 src={SectionThreeImg}
-                alt="Custom Profile Base"
-                className={styles.graphicAsset}
+                alt="Custom profile preview"
                 loading="lazy"
+                decoding="async"
+                width={315}
+                height={176}
+                className={styles.graphicAsset}
               />
             </div>
 
@@ -78,7 +84,11 @@ const FeatureThree = () => {
             <div className={styles.rightFloatingAvatar}>
               <img
                 src={avator}
-                alt="Client Portrait"
+                alt="Client portrait"
+                loading="lazy"
+                decoding="async"
+                width={92}
+                height={92}
                 className={styles.avatarImage}
               />
             </div>
@@ -90,7 +100,12 @@ const FeatureThree = () => {
               <div className={styles.feedbackAvatarCircle}>
                 <img
                   src={avator}
-                  alt="Feedback Client Portrait"
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  width={56}
+                  height={56}
                   className={styles.avatarImage}
                 />
               </div>
